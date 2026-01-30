@@ -1,0 +1,130 @@
+{
+    "example_source": [
+        "▁",
+        "中",
+        "国",
+        "における",
+        "臨",
+        "済",
+        "宗"
+    ],
+    "example_target": [
+        "<s>",
+        "▁R",
+        "in",
+        "za",
+        "i",
+        "▁School",
+        "▁in",
+        "▁China",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect"
+            ],
+            "score": -3.0159215927124023
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect"
+            ],
+            "score": -3.8841700553894043
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -4.802313327789307
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "i",
+                "kyu",
+                "▁sect"
+            ],
+            "score": -5.000309467315674
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect"
+            ],
+            "score": -5.099197864532471
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -5.545721530914307
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "yu",
+                "za",
+                "i",
+                "▁sect"
+            ],
+            "score": -5.782488822937012
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "i",
+                "za",
+                "i",
+                "▁sect"
+            ],
+            "score": -5.844532012939453
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "yu",
+                "za",
+                "i",
+                "▁Sect"
+            ],
+            "score": -6.113574981689453
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect"
+            ],
+            "score": -6.502633094787598
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMzBUMDQ6MTk6MzAuMzEyNjcxIiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}

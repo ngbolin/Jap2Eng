@@ -1,0 +1,136 @@
+{
+    "example_source": [
+        "▁",
+        "中",
+        "国",
+        "における",
+        "臨",
+        "済",
+        "宗"
+    ],
+    "example_target": [
+        "<s>",
+        "▁R",
+        "in",
+        "za",
+        "i",
+        "▁School",
+        "▁in",
+        "▁China",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁In",
+                "▁China"
+            ],
+            "score": -5.280986309051514
+        },
+        {
+            "hypothesis": [
+                "▁F",
+                "rom",
+                "▁China"
+            ],
+            "score": -6.532473087310791
+        },
+        {
+            "hypothesis": [
+                "▁A",
+                "nci",
+                "ent",
+                "▁China"
+            ],
+            "score": -6.61107063293457
+        },
+        {
+            "hypothesis": [
+                "▁A",
+                "nci",
+                "ent",
+                "▁Japan"
+            ],
+            "score": -8.006994247436523
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁Imp",
+                "erial",
+                "▁Court"
+            ],
+            "score": -8.686209678649902
+        },
+        {
+            "hypothesis": [
+                "▁D",
+                "e",
+                "part",
+                "ment",
+                "▁of",
+                "▁Japan"
+            ],
+            "score": -10.551589965820312
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁Imp",
+                "erial",
+                "▁H",
+                "ousehold",
+                "▁A",
+                "gen",
+                "cy"
+            ],
+            "score": -10.58200740814209
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁Imp",
+                "erial",
+                "▁H",
+                "ousehold",
+                "▁D",
+                "e",
+                "part",
+                "ment"
+            ],
+            "score": -11.075599670410156
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁Imp",
+                "erial",
+                "▁H",
+                "ousehold",
+                "▁D",
+                "e",
+                "part",
+                "ment",
+                "▁of",
+                "▁China"
+            ],
+            "score": -13.14253044128418
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁Imp",
+                "erial",
+                "▁H",
+                "ousehold",
+                "▁D",
+                "e",
+                "part",
+                "ment",
+                "s"
+            ],
+            "score": -13.19232177734375
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMzBUMDQ6MTQ6NTcuOTI0NDI4IiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}
