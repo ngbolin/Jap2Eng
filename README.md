@@ -23,6 +23,6 @@ We are using a series of different models to show how model performance varies a
 After forking the repository, use the following to train and test the model.
 
 ### Results
-Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of 18.06 on the Dev dataset, and a BLEU of 9.2 on the Test dataset. Going forward, I intent to implement a 2-layer Bidirectional LSTM ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025) and evaluate its performance vis-a-vis a single-layer model. Finally, I will implement a Neural Maching Translation model using Transformers.
+Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of ~8 on the Dev dataset, and a BLEU of 15.4 on the Test dataset. Going forward, I intend to implement a 2-layer Bidirectional LSTM (In Progress!) ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025) and evaluate its performance vis-a-vis a single-layer model. Finally, I will implement a Neural Machine Translation model using Transformers.
 
 ### Conclusion
