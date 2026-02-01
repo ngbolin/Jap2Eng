@@ -1,0 +1,14 @@
+numpy
+scipy
+tqdm
+docopt
+nltk
+torchvision
+torch
+sentencepiece
+lxml==5.0.0
+sacrebleu
+tensorboard
+mecab-python3
+unidic-lite
+spacy

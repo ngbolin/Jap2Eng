@@ -1,0 +1,164 @@
+{
+    "example_source": [
+        "▁",
+        "中",
+        "国",
+        "における",
+        "臨",
+        "済",
+        "宗"
+    ],
+    "example_target": [
+        "<s>",
+        "▁R",
+        "in",
+        "za",
+        "i",
+        "▁School",
+        "▁in",
+        "▁China",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "roperty"
+            ],
+            "score": -8.682380676269531
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁property"
+            ],
+            "score": -9.394372940063477
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "ro",
+                "per",
+                "t",
+                "ies"
+            ],
+            "score": -11.900574684143066
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "roperty"
+            ],
+            "score": -11.979703903198242
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁C",
+                "ultur",
+                "al",
+                "▁property"
+            ],
+            "score": -12.541707992553711
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "ro",
+                "ll",
+                "s"
+            ],
+            "score": -12.833179473876953
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "ro",
+                "per",
+                "t",
+                "ies",
+                "▁of",
+                "▁Japan"
+            ],
+            "score": -16.03459358215332
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "ro",
+                "per",
+                "t",
+                "ies",
+                "▁of",
+                "▁the",
+                "▁",
+                "emperor"
+            ],
+            "score": -19.286989212036133
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "ro",
+                "per",
+                "t",
+                "ies",
+                "▁",
+                "and",
+                "▁the",
+                "▁Imp",
+                "erial",
+                "▁Palace"
+            ],
+            "score": -21.34833335876465
+        },
+        {
+            "hypothesis": [
+                "▁C",
+                "ultur",
+                "al",
+                "▁P",
+                "ro",
+                "per",
+                "t",
+                "ies",
+                "▁",
+                "and",
+                "▁the",
+                "▁Imp",
+                "erial",
+                "▁Court"
+            ],
+            "score": -21.546504974365234
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMzBUMDQ6MTI6NDMuMTkxNDc3IiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}
