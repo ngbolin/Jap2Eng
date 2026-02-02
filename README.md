@@ -50,8 +50,6 @@ For each model: BidirectionalLSTM and SelfAttention, follow the
 ### Results
 Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of 8 on the dev/holdout dataset, and a BLEU of 15.4 on the test dataset using a 2-layer Bidirectional LSTM (In Progress!) ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
 
-![TensorBoard for LSTM](https://github.com/ngbolin/Jap2Eng/blob/main/SelfAttention/images/TensorBoard%20Process%20Monitoring.png)
-
 
 For the Transformer A, we obtained a Perplexity of 11 on the dev/holdout dataset, and a BLEU of XX on the test dataset.
 
