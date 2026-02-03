@@ -4,7 +4,7 @@
 Simple Chinese-to-English and Japanese-to-English translation models. The codes are **heavily** lifted from Assignment 3 of Stanford's CS224N course on Natural Language Processing with Deep Learning, "Neural Machine Translation". I'm training these Bidirectional 2-layer LSTM for my encoder, and a LSTMCell with Attention for my decoder on my RTX 5070 GPU, with the following architecture and hyperparameters:
 
 ### Data
-For the Japanese-to-English model, our data comes from the [Kyoto Free Translation Task (KFTT)](https://www.phontron.com/kftt/). The corpus contains ~440k sentences, with ~1.1k dev and test sentences for evaluation. The data provides data for both English and Japanese sentences separately, so no further processing is required on our end after data download [here](https://www.phontron.com/kftt/#datasystem). 
+For the Japanese-to-English model, our data comes from the [Japanese-English Subtitle Corpus](https://nlp.stanford.edu/projects/jesc/). The corpus contains 2.8 million sentences, with 2000 dev and 2000 test sentences for evaluation. The data provides data for both English and Japanese sentences separately, so no further processing is required on our end after data download [here](https://www.phontron.com/kftt/#datasystem). 
 
 #### Tokenization
 For tokenization, I opted for [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
@@ -24,16 +24,6 @@ In our second model, we will use Transformers ala [Vaswani et al.](https://arxiv
 4. dropout_rate: 0.2
 5. learning_rate: 5e-4
 
-### Hyperparameters for the Transformer Model A
-1. batch_size: 16
-2. word_embeddings: 300
-3. dim_feedforward: 512
-4. nhead: 6
-5. num_encoder_layer: 6
-6. num_decoder_layer: 6
-7. dropout_rate: 0.1
-8. learning_rate: 3e-4
-
 ### Hyperparameters for the Transformer Model B
 1. batch_size: 8
 2. word_embeddings: 300
@@ -48,9 +38,9 @@ In our second model, we will use Transformers ala [Vaswani et al.](https://arxiv
 For each model: BidirectionalLSTM and SelfAttention, follow the 
 
 ### Results
-Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of 8 on the dev/holdout dataset, and a BLEU of 15.4 on the test dataset using a 2-layer Bidirectional LSTM (In Progress!) ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
+Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of on the dev/holdout dataset, and a BLEU of on the test dataset using a 2-layer Bidirectional LSTM (In Progress!) ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
 
 
-For the Transformer A, we obtained a Perplexity of 11 on the dev/holdout dataset, and a BLEU of 9.11 on the test dataset.
+For the Transformer A, we obtained a Perplexity of 7.96 on the dev/holdout dataset, and a BLEU of 12.17 on the test dataset.
 
 ### Conclusion
