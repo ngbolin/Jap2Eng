@@ -71,7 +71,7 @@ This generates the following files: (1) vocab.json (file containing the word2idx
 
 3. ```sh run.sh train```
 
-This trains the Transformer model (from nmt_model.py), using the parameters e.g. embedding size, nheads, dropout rate, batch size listed in run.sh. Where parameters are not made explicitly available, you may refer to the raw code in nmt_model.py to adjust accordingly.
+This trains the models (in [nmt_model.py]), using the parameters e.g. embedding size, nheads, dropout rate, batch size listed in [run.sh]. Where parameters are not made explicitly available, you may refer to the raw code in [nmt_model.py] to adjust accordingly.
 
 4. ```sh run.sh test```
 
