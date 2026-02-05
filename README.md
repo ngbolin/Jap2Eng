@@ -11,7 +11,7 @@ For tokenization, I opted for [SentencePiece from Google](https://github.com/goo
 This is applied across both the Japanese and English corpus to tokenize the sentences into tokens (via words).
 
 ### Model
-#### Bidirectional LSTM
+#### Bidirectional LSTM with Attention
 We are using a series of different models to show how model performance varies according to its architecture, using [BLEU](https://en.wikipedia.org/wiki/BLEU). In the first model, we utilised a 2-layer Bidirectional LSTM with Attention, similar to [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). I've selected a batch size of 32 for the LSTM, along with a word embedding size of 300 (similar to Word2Vec). In addition, the number of hidden units for the neural layers are set at 512. 
 
 #### Transformer B(asic)
@@ -20,7 +20,7 @@ In our benchmark transformer model, we will use Transformers ala [Vaswani et al.
 #### Transformer A(dvanced)
 In our second model, we pre-train our Transformer on a separate Japanese to English dataset [Kyoto Free Translation Task by Phontron](https://www.phontron.com/kftt/), while initializing our word vectors using fasttext's pre-trained word vectors. The dataset contains Wikipedia articles (translated from Japanese) related to Kyoto. The data contains ~440k (~300k after cleaning) training sentences, and ~1k dev and test sentences. Pre-training on a dataset drastically different from the JESC should in theory allow our Transformer model to generalize better and faster, while initializing word vectors using fasttest's pre-trained vectors should improve the model's perplexity from the onset. Apart from the embedding size, the layout for this model is similar to Transformer B.
 
-#### Hyperparameters for the Bidirectional LSTM
+#### Hyperparameters for the Bidirectional LSTM with Attention
 1. batch_size: 32
 2. word_embeddings: 300 (per word, per language)
 3. hidden_units: 256 (for the LSTM layers)
@@ -48,7 +48,39 @@ In our second model, we pre-train our Transformer on a separate Japanese to Engl
 8. learning_rate: 3e-4
 
 ### How To
-For each model: BidirectionalLSTM and SelfAttention, follow the 
+#### Bidirectional LSTM with Attention
+After downloading the data from the JESC website and saaving it to a folder called data in the main directory, run:
+1. python preprocess.py
+
+This converts the main data into the training, dev and test datasets.
+
+For the Bidirectional LSTM model, please follow the steps below:
+
+2. python vocab.json --train-src=../data/jpn-eng/JESC/train.ja --train-tgt=../data/jpn-eng/JESC/train.ja vocab.json
+This generates the following files: (1) vocab.json (file containing the word2idx and idx2word dictionaries), (2) src.vocab and tgt.vocab files which functions as the lookup table for our Translation model to extract the relevant tokens/ids and (3) src.model and tgt.model, the tokenizer models that splits Japanese and English terms. 
+
+3. sh run.sh train
+This trains the Bidirectional LSTM model (from nmt_model.py), using the parameters e.g. size of hidden units, dropout rate, batch size listed in run.sh. Where parameters are not made explicitly available, you may refer to the raw code in nmt_model.py to adjust accordingly.
+
+5. sh run.sh test
+Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
+
+#### Transfomer B(asic)
+After downloading the data from the JESC website and saaving it to a folder called data in the main directory, run:
+1. python preprocess.py
+
+This converts the main data into the training, dev and test datasets.
+
+For the Transformer B model, please follow the steps below:
+
+2. python vocab.json --train-src=../data/jpn-eng/JESC/train.ja --train-tgt=../data/jpn-eng/JESC/train.ja vocab.json
+This generates the following files: (1) vocab.json (file containing the word2idx and idx2word dictionaries), (2) src.vocab and tgt.vocab files which functions as the lookup table for our Translation model to extract the relevant tokens/ids and (3) src.model and tgt.model, the tokenizer models that splits Japanese and English terms. 
+
+3. sh run.sh train
+This trains the Transformer model (from nmt_model.py), using the parameters e.g. embedding size, maximum length (since we are using learned positional encoding), dropout rate, batch size listed in run.sh. Where parameters are not made explicitly available, you may refer to the raw code in nmt_model.py to adjust accordingly.
+
+5. sh run.sh test
+Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
 
 ### Results
 Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of on the dev/holdout dataset, and a BLEU of on the test dataset using a 2-layer Bidirectional LSTM (In Progress!) ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
