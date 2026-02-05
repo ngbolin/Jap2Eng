@@ -13,16 +13,9 @@ This is applied across both the Japanese and English corpus to tokenize the sent
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Model
+--------------------------------------------------------------------------------------------------------------------------------
 #### Bidirectional LSTM with Attention
 We are using a series of different models to show how model performance varies according to its architecture, using [BLEU](https://en.wikipedia.org/wiki/BLEU). In the first model, we utilised a 2-layer Bidirectional LSTM with Attention, similar to [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). I've selected a batch size of 32 for the LSTM, along with a word embedding size of 300 (similar to Word2Vec). In addition, the number of hidden units for the neural layers are set at 512. 
-
-#### Transformer B(asic)
-In our benchmark transformer model, we will use Transformers ala [Vaswani et al.](https://arxiv.org/abs/1706.03762). Due to my GPU constraint, I've elected for a smaller batch size (32 instead of the usual 64), and kept the number of encoder and decoder layers constant (at 6). In this model, normalisation is conducted first, prior to residual connection i.e. "Norm and Add" instead of "Add and Norm". Each decoder block contains the following: (Self-attention mechanism, Norm and Add layer, Feed Forward Neural Network with size 2048, and another Norm and Add layer). While our word vector embedding size is relatively small (at 512), we still employ Scaled Dot-Product Attention for normalization.
-
-#### Transformer A(dvanced)
-In our second model, we pre-train our Transformer on a separate Japanese to English dataset [Kyoto Free Translation Task by Phontron](https://www.phontron.com/kftt/), while initializing our word vectors using fasttext's pre-trained word vectors. The dataset contains Wikipedia articles (translated from Japanese) related to Kyoto. The data contains ~440k (~300k after cleaning) training sentences, and ~1k dev and test sentences. Pre-training on a dataset drastically different from the JESC should in theory allow our Transformer model to generalize better and faster, while initializing word vectors using fasttest's pre-trained vectors should improve the model's perplexity from the onset. Apart from the embedding size, the layout for this model is similar to Transformer B.
-
---------------------------------------------------------------------------------------------------------------------------------
 
 #### Hyperparameters for the Bidirectional LSTM with Attention
 1. batch_size: 32
@@ -31,7 +24,12 @@ In our second model, we pre-train our Transformer on a separate Japanese to Engl
 4. dropout_rate: 0.2
 5. learning_rate: 5e-4
 
-### Hyperparameters for the Transformer Model B(asic)
+--------------------------------------------------------------------------------------------------------------------------------
+
+#### Transformer B(asic)
+In our benchmark transformer model, we will use Transformers ala [Vaswani et al.](https://arxiv.org/abs/1706.03762). Due to my GPU constraint, I've elected for a smaller batch size (32 instead of the usual 64), and kept the number of encoder and decoder layers constant (at 6). In this model, normalisation is conducted first, prior to residual connection i.e. "Norm and Add" instead of "Add and Norm". Each decoder block contains the following: (Self-attention mechanism, Norm and Add layer, Feed Forward Neural Network with size 2048, and another Norm and Add layer). While our word vector embedding size is relatively small (at 512), we still employ Scaled Dot-Product Attention for normalization.
+
+#### Hyperparameters for the Transformer Model B(asic)
 1. batch_size: 32
 2. word_embeddings: 512
 3. dim_feedforward: 2048
@@ -41,7 +39,12 @@ In our second model, we pre-train our Transformer on a separate Japanese to Engl
 7. dropout_rate: 0.1
 8. learning_rate: 3e-4
 
-### Hyperparameters for the Transformer Model A(dvanced)
+--------------------------------------------------------------------------------------------------------------------------------
+
+#### Transformer A(dvanced)
+In our second model, we pre-train our Transformer on a separate Japanese to English dataset [Kyoto Free Translation Task by Phontron](https://www.phontron.com/kftt/), while initializing our word vectors using fasttext's pre-trained word vectors. The dataset contains Wikipedia articles (translated from Japanese) related to Kyoto. The data contains ~440k (~300k after cleaning) training sentences, and ~1k dev and test sentences. Pre-training on a dataset drastically different from the JESC should in theory allow our Transformer model to generalize better and faster, while initializing word vectors using fasttest's pre-trained vectors should improve the model's perplexity from the onset. Apart from the embedding size, the layout for this model is similar to Transformer B.
+
+#### Hyperparameters for the Transformer Model A(dvanced)
 1. batch_size: 32
 2. word_embeddings: 300
 3. dim_feedforward: 2048
