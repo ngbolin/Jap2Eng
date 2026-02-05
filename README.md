@@ -57,40 +57,24 @@ In our second model, we pre-train our Transformer on a separate Japanese to Engl
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### How To
-#### Bidirectional LSTM with Attention
+
+The steps for all models are (largely similar) apart from the arguments listed. In the Bidirectional LSTM with Attention, the argument ```hidden_units``` is made available for the number of hidden units for each word. On the other hand, the parameter ```nheads``` is made available for the Transformer models due to the usage of Multihead Attention. 
+
 After downloading the data from the JESC website and saaving it to a folder called data in the main directory, run:
-1. python preprocess.py
+1. ```python preprocess.py```
 
-This converts the main data into the training, dev and test datasets.
+This processes the downloaded data into training, development and testing datasets for both Japanese and English sentences e.g. train.en vs train.ja.
 
-For the Bidirectional LSTM model, please follow the steps below:
+2. ```python vocab.json --train-src=../data/jpn-eng/JESC/train.ja --train-tgt=../data/jpn-eng/JESC/train.ja vocab.json```
 
-2. python vocab.json --train-src=../data/jpn-eng/JESC/train.ja --train-tgt=../data/jpn-eng/JESC/train.ja vocab.json
 This generates the following files: (1) vocab.json (file containing the word2idx and idx2word dictionaries), (2) src.vocab and tgt.vocab files which functions as the lookup table for our Translation model to extract the relevant tokens/ids and (3) src.model and tgt.model, the tokenizer models that splits Japanese and English terms. 
 
-3. sh run.sh train
-This trains the Bidirectional LSTM model (from nmt_model.py), using the parameters e.g. size of hidden units, dropout rate, batch size listed in run.sh. Where parameters are not made explicitly available, you may refer to the raw code in nmt_model.py to adjust accordingly.
+3. ```sh run.sh train```
 
-5. sh run.sh test
-Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
+This trains the Transformer model (from nmt_model.py), using the parameters e.g. embedding size, nheads, dropout rate, batch size listed in run.sh. Where parameters are not made explicitly available, you may refer to the raw code in nmt_model.py to adjust accordingly.
 
---------------------------------------------------------------------------------------------------------------------------------
+4. ```sh run.sh test```
 
-#### Transfomer B(asic)
-After downloading the data from the JESC website and saaving it to a folder called data in the main directory, run:
-1. python preprocess.py
-
-This converts the main data into the training, dev and test datasets.
-
-For the Transformer B model, please follow the steps below:
-
-2. python vocab.json --train-src=../data/jpn-eng/JESC/train.ja --train-tgt=../data/jpn-eng/JESC/train.ja vocab.json
-This generates the following files: (1) vocab.json (file containing the word2idx and idx2word dictionaries), (2) src.vocab and tgt.vocab files which functions as the lookup table for our Translation model to extract the relevant tokens/ids and (3) src.model and tgt.model, the tokenizer models that splits Japanese and English terms. 
-
-3. sh run.sh train
-This trains the Transformer model (from nmt_model.py), using the parameters e.g. embedding size, maximum length (since we are using learned positional encoding), dropout rate, batch size listed in run.sh. Where parameters are not made explicitly available, you may refer to the raw code in nmt_model.py to adjust accordingly.
-
-5. sh run.sh test
 Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
 
 --------------------------------------------------------------------------------------------------------------------------------
