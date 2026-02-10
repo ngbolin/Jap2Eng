@@ -1,0 +1,153 @@
+{
+    "example_source": [
+        "▁もういい",
+        "よ",
+        "▁ごちそうさま",
+        "▁ううん"
+    ],
+    "example_target": [
+        "<s>",
+        "▁yeah",
+        ",",
+        "▁i",
+        "'",
+        "m",
+        "▁fine",
+        ".",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁okay",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -6.53091287612915
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁okay",
+                ".",
+                "▁thank",
+                "▁you",
+                "."
+            ],
+            "score": -7.130695343017578
+        },
+        {
+            "hypothesis": [
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -9.448472023010254
+        },
+        {
+            "hypothesis": [
+                "▁that",
+                "'",
+                "s",
+                "▁enough",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -6.8686347007751465
+        },
+        {
+            "hypothesis": [
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -10.53560733795166
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁all",
+                "▁right",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -7.7096943855285645
+        },
+        {
+            "hypothesis": [
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -7.808694839477539
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁fine",
+                ".",
+                "▁thanks",
+                "."
+            ],
+            "score": -7.223222255706787
+        },
+        {
+            "hypothesis": [
+                "▁that",
+                "'",
+                "s",
+                "▁enough",
+                "."
+            ],
+            "score": -6.165647506713867
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁enough",
+                "."
+            ],
+            "score": -6.659981727600098
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMjlUMTA6MjM6NDYuMzI0MTE2IiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}

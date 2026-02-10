@@ -1,0 +1,13 @@
+name: cs224n-gpu
+channels:
+  - defaults
+  - nvidia
+dependencies:
+  - python==3.10
+  - nvidia::cuda-toolkit==12.1.1
+  - pip
+#pip install mecab-python3
+#pip install unidic-lite
+#pip install spacy
+  - pip:
+    - -r requirements.txt

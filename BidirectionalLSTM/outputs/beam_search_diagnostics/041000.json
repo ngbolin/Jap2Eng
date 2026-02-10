@@ -1,0 +1,144 @@
+{
+    "example_source": [
+        "▁",
+        "中",
+        "国",
+        "における",
+        "臨",
+        "済",
+        "宗"
+    ],
+    "example_target": [
+        "<s>",
+        "▁R",
+        "in",
+        "za",
+        "i",
+        "▁School",
+        "▁in",
+        "▁China",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -0.8906862139701843
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -1.2665038108825684
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect",
+                "▁of",
+                "▁China"
+            ],
+            "score": -3.8216729164123535
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -3.962400436401367
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "shu",
+                "▁sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -4.089573383331299
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect",
+                "▁in",
+                "▁China"
+            ],
+            "score": -4.419704437255859
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect"
+            ],
+            "score": -4.689894676208496
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect"
+            ],
+            "score": -4.757427215576172
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect",
+                "▁in",
+                "▁China",
+                "."
+            ],
+            "score": -4.8805131912231445
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "shu",
+                "▁sect"
+            ],
+            "score": -6.520418167114258
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMzBUMDU6NDM6MjcuMDIzNTk5IiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}

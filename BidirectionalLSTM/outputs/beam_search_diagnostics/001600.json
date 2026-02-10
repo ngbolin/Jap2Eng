@@ -1,0 +1,164 @@
+{
+    "example_source": [
+        "▁もういい",
+        "よ",
+        "▁ごちそうさま",
+        "▁ううん"
+    ],
+    "example_target": [
+        "<s>",
+        "▁yeah",
+        ",",
+        "▁i",
+        "'",
+        "m",
+        "▁fine",
+        ".",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                "."
+            ],
+            "score": -6.294510841369629
+        },
+        {
+            "hypothesis": [
+                "▁oh",
+                ",",
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                "."
+            ],
+            "score": -9.403366088867188
+        },
+        {
+            "hypothesis": [
+                "▁well",
+                ",",
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                "."
+            ],
+            "score": -9.626550674438477
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁going",
+                "▁to",
+                "▁go",
+                "."
+            ],
+            "score": -10.172307014465332
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁going",
+                "▁to",
+                "▁be",
+                "."
+            ],
+            "score": -11.140804290771484
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                ".",
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                "."
+            ],
+            "score": -12.17171573638916
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                ".",
+                "▁i",
+                "'",
+                "m",
+                "▁not",
+                "."
+            ],
+            "score": -14.355067253112793
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                ".",
+                "▁i",
+                "'",
+                "m",
+                "▁going",
+                "▁to",
+                "▁go",
+                "."
+            ],
+            "score": -16.284400939941406
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                ".",
+                "▁i",
+                "'",
+                "m",
+                "▁going",
+                "▁to",
+                "▁be",
+                "."
+            ],
+            "score": -17.143537521362305
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                ".",
+                "▁i",
+                "'",
+                "m",
+                "▁sorry",
+                ".",
+                "▁i",
+                "'",
+                "m",
+                "▁not",
+                "."
+            ],
+            "score": -21.188167572021484
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMjlUMDg6Mjk6NTIuODMyMTc5IiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}

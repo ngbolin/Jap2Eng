@@ -1,0 +1,135 @@
+{
+    "example_source": [
+        "▁",
+        "中",
+        "国",
+        "における",
+        "臨",
+        "済",
+        "宗"
+    ],
+    "example_target": [
+        "<s>",
+        "▁R",
+        "in",
+        "za",
+        "i",
+        "▁School",
+        "▁in",
+        "▁China",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁In",
+                "▁China"
+            ],
+            "score": -5.129525661468506
+        },
+        {
+            "hypothesis": [
+                "▁F",
+                "rom",
+                "▁China"
+            ],
+            "score": -5.784831523895264
+        },
+        {
+            "hypothesis": [
+                "▁In",
+                "▁China",
+                "."
+            ],
+            "score": -6.345802307128906
+        },
+        {
+            "hypothesis": [
+                "▁R",
+                "in",
+                "kan",
+                "▁Sect"
+            ],
+            "score": -6.989380836486816
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "kan",
+                "▁Sect"
+            ],
+            "score": -7.583239555358887
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "jo",
+                "▁Sect"
+            ],
+            "score": -8.087106704711914
+        },
+        {
+            "hypothesis": [
+                "▁The",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect"
+            ],
+            "score": -8.409795761108398
+        },
+        {
+            "hypothesis": [
+                "▁D",
+                "e",
+                "part",
+                "ment",
+                "▁of",
+                "▁the",
+                "▁R",
+                "in",
+                "kan",
+                "▁Sect"
+            ],
+            "score": -11.350520133972168
+        },
+        {
+            "hypothesis": [
+                "▁D",
+                "e",
+                "part",
+                "ment",
+                "▁of",
+                "▁the",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁Sect"
+            ],
+            "score": -11.371845245361328
+        },
+        {
+            "hypothesis": [
+                "▁D",
+                "e",
+                "part",
+                "ment",
+                "▁of",
+                "▁the",
+                "▁R",
+                "in",
+                "za",
+                "i",
+                "▁sect"
+            ],
+            "score": -12.40188980102539
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDEtMzBUMDQ6MTc6MTMuODc5NDUyIiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}
