@@ -10,6 +10,9 @@ For the Japanese-to-English model, our data comes from the [Japanese-English Sub
 For tokenization, I opted for [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
 This is applied across both the Japanese and English corpus to tokenize the sentences into tokens (via words).
 
+### Evaluation Metric
+To evaluate our model, we will use [BLEURT](https://github.com/google-research/bleurt), a Transfer Learning-Based Metric for Natural Language Generation. BLEURT takes a sentence pair (reference and candidate) and returns a score that indicates the extent to which the candidate is fluent and conveys the meaning of the reference. We will use the recommended checkpoint of BLEURT-20, which returns a score between 0 and 1 where 0 indicates a random output and 1 a perfect one. Following Google Research's recommendation, we will average the BLEURT scores across the sentences in the corpus.
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Model
@@ -100,9 +103,9 @@ Decodes the test input into test output and evaluates the goodness of fit of our
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Results
-Using the model, I'm getting a [Perplexity score](https://en.wikipedia.org/wiki/Perplexity) of on the dev/holdout dataset, and a BLEU of on the test dataset using a 2-layer Bidirectional LSTM (In Progress!) ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
+Using the model, I'm getting a BLEURT of XX on the test dataset using a 2-layer Bidirectional LSTM ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
 
 
-Using our Bidirectional LSTM, we obtained a BLEU of 7.077 on the holdout dataset. On the other hand, our Transformer B(asic) achieved a BLEU of 10.63, a 50% improvement over our LSTM.
+Using our Bidirectional LSTM, we obtained a BLEURT of XX on the holdout dataset. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.48.
 
 ### Conclusion
