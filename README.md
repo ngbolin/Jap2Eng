@@ -26,6 +26,7 @@ We are using a series of different models to show how model performance varies a
 3. hidden_units: 256 (for the LSTM layers)
 4. dropout_rate: 0.2
 5. learning_rate: 5e-4
+6. num_trials: 5
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,26 +37,39 @@ In our benchmark transformer model, we will use Transformers ala [Vaswani et al.
 1. batch_size: 32
 2. word_embeddings: 512
 3. dim_feedforward: 2048
-4. nhead: 6
+4. nhead: 8
 5. num_encoder_layer: 6
 6. num_decoder_layer: 6
 7. dropout_rate: 0.1
 8. learning_rate: 3e-4
+9. num_trials: 5
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 #### Transformer A(dvanced)
-In our second model, we pre-train our Transformer on a separate Japanese to English dataset For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. We create a function, ```preprocess.py``` to extract the first 2 million sentence-pairs, and allocate 99.9% of them for training (and 0.1% for dev). For this model, we have increased our embedding size to 768. Pre-training on a dataset that is different from the JESC should in theory allow our Transformer model to generalize better and faster. Apart from the embedding size, the layout for this model is similar to Transformer B.
+In our second model, we pre-train our Transformer on a separate Japanese to English dataset For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. We create a function, ```preprocess.py``` to extract the first 2 million sentence-pairs, and allocate 99.9% of them for training (and 0.1% for dev). Pre-training on a dataset that is different from the JESC should in theory allow our Transformer model to generalize better and faster, and setting the parameter ```num_trials``` to 1 prevents the Pretrained Transformer from being overly fixated on the Pretraining dataset. Apart from the use of the Pretrained Transformer, the hyperparameters for TransformerA and TransformerB are largely similar.
 
-#### Hyperparameters for the Transformer Model A(dvanced)
-1. batch_size: 32
-2. word_embeddings: 768
-3. dim_feedforward: 3072
+#### Hyperparameters for Pretrained Transformer
+1. batch_size: 16
+2. word_embeddings: 512
+3. dim_feedforward: 2048
 4. nhead: 6
 5. num_encoder_layer: 6
 6. num_decoder_layer: 6
 7. dropout_rate: 0.1
 8. learning_rate: 3e-4
+9. num_trials: 1
+
+#### Hyperparameters for the Transformer Model A(dvanced)
+1. batch_size: 32
+2. word_embeddings: 512
+3. dim_feedforward: 2048
+4. nhead: 6
+5. num_encoder_layer: 6
+6. num_decoder_layer: 6
+7. dropout_rate: 0.1
+8. learning_rate: 3e-4
+9. num_trials: 5
 
 --------------------------------------------------------------------------------------------------------------------------------
 
