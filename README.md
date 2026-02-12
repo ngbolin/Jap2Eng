@@ -45,12 +45,12 @@ In our benchmark transformer model, we will use Transformers ala [Vaswani et al.
 --------------------------------------------------------------------------------------------------------------------------------
 
 #### Transformer A(dvanced)
-In our second model, we pre-train our Transformer on a separate Japanese to English dataset [Kyoto Free Translation Task by Phontron](https://www.phontron.com/kftt/), while initializing our word vectors using fasttext's pre-trained word vectors. The dataset contains Wikipedia articles (translated from Japanese) related to Kyoto. The data contains ~440k (~300k after cleaning) training sentences, and ~1k dev and test sentences. Pre-training on a dataset drastically different from the JESC should in theory allow our Transformer model to generalize better and faster, while initializing word vectors using fasttest's pre-trained vectors should improve the model's perplexity from the onset. Apart from the embedding size, the layout for this model is similar to Transformer B.
+In our second model, we pre-train our Transformer on a separate Japanese to English dataset For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. We create a function, ```preprocess.py``` to extract the first 2 million sentence-pairs, and allocate 99.9% of them for training (and 0.1% for dev). For this model, we have increased our embedding size to 768. Pre-training on a dataset that is different from the JESC should in theory allow our Transformer model to generalize better and faster. Apart from the embedding size, the layout for this model is similar to Transformer B.
 
 #### Hyperparameters for the Transformer Model A(dvanced)
 1. batch_size: 32
-2. word_embeddings: 300
-3. dim_feedforward: 2048
+2. word_embeddings: 768
+3. dim_feedforward: 3072
 4. nhead: 6
 5. num_encoder_layer: 6
 6. num_decoder_layer: 6
