@@ -1,10 +1,12 @@
 ### Neural Machine Translation Model - Jap2Eng
 
 ### Introduction
-Simple Chinese-to-English and Japanese-to-English translation models. The codes are **heavily** lifted from Assignment 3 of Stanford's CS224N course on Natural Language Processing with Deep Learning, "Neural Machine Translation". I'm training these Bidirectional 2-layer LSTM for my encoder, and a LSTMCell with Attention for my decoder on my RTX 5070 GPU, with the following architecture and hyperparameters:
+Simple implementation of Japanese-to-English neural machine translation models. The initial codes are **heavily** lifted from Assignment 3 of Stanford's CS224N course on Natural Language Processing with Deep Learning, "Neural Machine Translation". I'm training these models locally on my RTX 5070 GPU.
 
 ### Data
 For the Japanese-to-English model, our data comes from the [Japanese-English Subtitle Corpus](https://nlp.stanford.edu/projects/jesc/). The corpus contains 2.8 million sentences, with 2000 dev and 2000 test sentences for evaluation. The data provides data for both English and Japanese sentences separately, so no further processing is required on our end after data download [here](https://www.phontron.com/kftt/#datasystem). 
+
+For pre-training, we are using data from the [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/) dataset, the largest publicly available English-Japanese parallel corpus created by NTT.
 
 #### Tokenization
 For tokenization, I opted for [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
@@ -18,7 +20,7 @@ To evaluate our model, we will use [BLEURT](https://github.com/google-research/b
 ### Model
 --------------------------------------------------------------------------------------------------------------------------------
 #### Bidirectional LSTM with Attention
-We are using a series of different models to show how model performance varies according to its architecture, using [BLEU](https://en.wikipedia.org/wiki/BLEU). In the first model, we utilised a 2-layer Bidirectional LSTM with Attention, similar to [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). I've selected a batch size of 32 for the LSTM, along with a word embedding size of 300 (similar to Word2Vec). In addition, the number of hidden units for the neural layers are set at 512. 
+We are using a series of different models to show how model performance varies according to its architecture. In the first model, we utilised a 2-layer Bidirectional LSTM with Attention, similar to [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). I've selected a batch size of 32 for the LSTM, along with a word embedding size of 300 (similar to Word2Vec). In addition, the number of hidden units for the neural layers are set at 512. 
 
 #### Hyperparameters for the Bidirectional LSTM with Attention
 1. batch_size: 32
