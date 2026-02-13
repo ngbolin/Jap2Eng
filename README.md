@@ -119,9 +119,6 @@ Decodes the test input into test output and evaluates the goodness of fit of our
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Results
-Using the model, I'm getting a BLEURT of XX on the test dataset using a 2-layer Bidirectional LSTM ala [Luong, Pham and Manning (2015)](https://arxiv.org/abs/1508.04025). As the helper code provided in the Assignment has TensorBoard enabled, we've plotted the performance of the model.
-
-
-Using our Bidirectional LSTM, we obtained a BLEURT of 0.4137 on the holdout dataset. Our Transformer B(asic) achieved a BLEURT of 0.4773. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.4800.
+Using our Bidirectional LSTM, we obtained a BLEURT of 0.414 on the holdout dataset. Our Transformer B(asic) achieved a BLEURT of 0.477. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.480.
 
 ### Conclusion
