@@ -90,7 +90,7 @@ This trains the models (in [nmt_model.py]), using the parameters e.g. embedding 
 
 Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
 
-3. ```sh run.sh test```
+3. ```sh run.sh test_bleurt```
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -103,7 +103,7 @@ The following function generates the following files: (1) vocab.json (file conta
 
 2. ```python vocab.json --train-src=../data/jpn-eng/JESC/train.ja --train-tgt=../data/jpn-eng/JESC/train.ja vocab.json```
 
-After data pre-processing, we proceed to pretrain the model. This cal be done by calling the following function:
+After data pre-processing, we proceed to pretrain the model. This pre-trains our vanilla Transformer on the JParaCrawl dataset, and outputs the Pretrained Transformer which will be used as our starting model for training. This can be done by calling the following function:
 3. ```sh run.sh pretrain```
 
 This trains the models (in [nmt_model.py]), using the parameters e.g. embedding size, nheads, dropout rate, batch size listed in [run.sh]. Where parameters are not made explicitly available, you may refer to the raw code in [nmt_model.py] to adjust accordingly.
@@ -112,7 +112,7 @@ This trains the models (in [nmt_model.py]), using the parameters e.g. embedding 
 
 Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
 
-6. ```sh run.sh test```
+6. ```sh run.sh test_bleurt```
 
 
 
