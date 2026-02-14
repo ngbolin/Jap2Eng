@@ -4,7 +4,7 @@
 Simple implementation of Japanese-to-English neural machine translation models. The initial codes are **heavily** lifted from Assignment 3 of Stanford's CS224N course on Natural Language Processing with Deep Learning, "Neural Machine Translation". I'm training these models locally on my RTX 5070 GPU.
 
 ### Data
-For the Japanese-to-English model, our data comes from the [Japanese-English Subtitle Corpus](https://nlp.stanford.edu/projects/jesc/). The corpus contains 2.8 million sentences, with 2000 dev and 2000 test sentences for evaluation. The data provides data for both English and Japanese sentences separately, so no further processing is required on our end after data download [here](https://www.phontron.com/kftt/#datasystem). 
+For the Japanese-to-English model, our data comes from the [Japanese-English Subtitle Corpus](https://nlp.stanford.edu/projects/jesc/). The corpus contains 2.8 million sentences, with 2000 dev and 2000 test sentences for evaluation. The data contains both English and Japanese sentences separately, so no further processing is required on our end after data download [here](https://www.phontron.com/kftt/#datasystem). 
 
 For pre-training, we are using data from the [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/) dataset, the largest publicly available English-Japanese parallel corpus created by NTT.
 
@@ -50,6 +50,32 @@ In our benchmark transformer model, we will use Transformers ala [Vaswani et al.
 
 #### Transformer A(dvanced)
 In our second model, we pre-train our Transformer on a separate Japanese to English dataset For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. We create a function, ```preprocess.py``` to extract the first 2 million sentence-pairs, and allocate 99.9% of them for training (and 0.1% for dev). Pre-training on a dataset that is different from the JESC should in theory allow our Transformer model to generalize better and faster, and setting the parameter ```num_trials``` to 1 prevents the Pretrained Transformer from being overly fixated on the Pretraining dataset. Apart from the use of the Pretrained Transformer, the hyperparameters for TransformerA and TransformerB are largely similar.
+
+#### Hyperparameters for Pretrained Transformer
+1. batch_size: 16
+2. word_embeddings: 512
+3. dim_feedforward: 2048
+4. nhead: 6
+5. num_encoder_layer: 6
+6. num_decoder_layer: 6
+7. dropout_rate: 0.1
+8. learning_rate: 3e-4
+9. num_trials: 1
+
+#### Hyperparameters for the Transformer Model A(dvanced)
+1. batch_size: 32
+2. word_embeddings: 512
+3. dim_feedforward: 2048
+4. nhead: 6
+5. num_encoder_layer: 6
+6. num_decoder_layer: 6
+7. dropout_rate: 0.1
+8. learning_rate: 3e-4
+9. num_trials: 5
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+#### Transformer BT (Back Translation) - In progress 14 Feb 2026
 
 #### Hyperparameters for Pretrained Transformer
 1. batch_size: 16
