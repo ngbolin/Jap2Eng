@@ -12,6 +12,9 @@ For pre-training, we are using data from the [JParaCrawl](https://www.kecl.ntt.c
 For tokenization, I opted for [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
 This is applied across both the Japanese and English corpus to tokenize the sentences into tokens (via words).
 
+### Model (Updated 4 Mar 2026)
+The weights and parameters of the best model (TransformerA) has been uploaded on HuggingFace (https://huggingface.co/ngbolin/Jap2Eng).
+
 ### Evaluation Metric
 To evaluate our model, we will use [BLEURT](https://github.com/google-research/bleurt), a Transfer Learning-Based Metric for Natural Language Generation. BLEURT takes a sentence pair (reference and candidate) and returns a score that indicates the extent to which the candidate is fluent and conveys the meaning of the reference. We will use the recommended checkpoint of BLEURT-20, which returns a score between 0 and 1 where 0 indicates a random output and 1 a perfect one. Following Google Research's recommendation, we will average the BLEURT scores across the sentences in the corpus.
 
@@ -114,11 +117,10 @@ Decodes the test input into test output and evaluates the goodness of fit of our
 
 6. ```sh run.sh test```
 
-
-
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Results
 Using our Bidirectional LSTM, we obtained a BLEURT of 0.414 on the holdout dataset. Our Transformer B(asic) achieved a BLEURT of 0.477. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.480.
 
 ### Conclusion
+In the case of our simple example, we observe that Transformers do much better than Bidirectional LSTMs with Attention, with both Transformer models achieving an improvement of > 15%. However, pretraining doesn't seem to improve the BLEURT score much, since it only leads to an improvement of 0.6%.    
