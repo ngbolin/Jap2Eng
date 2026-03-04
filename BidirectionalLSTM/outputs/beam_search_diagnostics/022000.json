@@ -1,0 +1,124 @@
+{
+    "example_source": [
+        "▁もういい",
+        "よ",
+        "▁ごちそうさま",
+        "▁ううん"
+    ],
+    "example_target": [
+        "<s>",
+        "▁yeah",
+        ",",
+        "▁i",
+        "'",
+        "m",
+        "▁fine",
+        ".",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁good",
+                "▁morning",
+                "."
+            ],
+            "score": -5.639262676239014
+        },
+        {
+            "hypothesis": [
+                "▁don",
+                "'",
+                "t",
+                "▁worry",
+                "."
+            ],
+            "score": -5.784796714782715
+        },
+        {
+            "hypothesis": [
+                "▁good",
+                "▁luck",
+                "."
+            ],
+            "score": -5.8875932693481445
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁good",
+                "."
+            ],
+            "score": -7.025480270385742
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁enough",
+                "."
+            ],
+            "score": -7.182864665985107
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁fine",
+                "."
+            ],
+            "score": -7.344623565673828
+        },
+        {
+            "hypothesis": [
+                "▁it",
+                "'",
+                "s",
+                "▁okay",
+                "."
+            ],
+            "score": -7.399257659912109
+        },
+        {
+            "hypothesis": [
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                "."
+            ],
+            "score": -7.4448418617248535
+        },
+        {
+            "hypothesis": [
+                "▁don",
+                "'",
+                "t",
+                "▁worry",
+                "▁about",
+                "▁it",
+                "."
+            ],
+            "score": -7.5678534507751465
+        },
+        {
+            "hypothesis": [
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                ",",
+                "▁no",
+                "."
+            ],
+            "score": -8.81397819519043
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjYtMDItMTJUMDQ6MzQ6MDAuNzQ2OTA0IiwgImgiOiAiREVTS1RPUC1CT0xJTiIsICJ1IjogImJvX2xpbiJ9"
+}

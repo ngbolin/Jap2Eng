@@ -1,0 +1,9 @@
+*.ja
+*.en
+*.txt
+*.bin
+*.optim
+checkpoints/
+BidirectionalLSTM/model.bin
+*.model
+*.bin
