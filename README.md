@@ -12,8 +12,8 @@ For pre-training, we are using data from the [JParaCrawl](https://www.kecl.ntt.c
 For tokenization, I opted for [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
 This is applied across both the Japanese and English corpus to tokenize the sentences into tokens (via words).
 
-### Model (Updated 4 Mar 2026)
-The weights and parameters of the best model (TransformerA) has been uploaded on HuggingFace (https://huggingface.co/ngbolin/Jap2Eng).
+### Model (Updated 26 Mar 2026)
+The weights and parameters of the best model (TransformerA) has been uploaded on HuggingFace (https://huggingface.co/ngbolin/Jap2Eng). Currently working on TransformerC.
 
 ### Evaluation Metric
 To evaluate our model, we will use [BLEURT](https://github.com/google-research/bleurt), a Transfer Learning-Based Metric for Natural Language Generation. BLEURT takes a sentence pair (reference and candidate) and returns a score that indicates the extent to which the candidate is fluent and conveys the meaning of the reference. We will use the recommended checkpoint of BLEURT-20, which returns a score between 0 and 1 where 0 indicates a random output and 1 a perfect one. Following Google Research's recommendation, we will average the BLEURT scores across the sentences in the corpus.
