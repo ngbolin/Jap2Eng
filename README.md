@@ -52,7 +52,7 @@ In our benchmark transformer model, we will use Transformers ala [Vaswani et al.
 --------------------------------------------------------------------------------------------------------------------------------
 
 #### Transformer A(dvanced)
-In our second model, we pre-train our Transformer on a separate Japanese to English dataset For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. We create a function, ```preprocess.py``` to extract the first 2 million sentence-pairs, and allocate 99.9% of them for training (and 0.1% for dev). Pre-training on a dataset that is different from the JESC should in theory allow our Transformer model to generalize better and faster, and setting the parameter ```num_trials``` to 1 prevents the Pretrained Transformer from being overly fixated on the Pretraining dataset. Apart from the use of the Pretrained Transformer, the hyperparameters for TransformerA and TransformerB are largely similar.
+In our third model, we pre-train our Transformer on a separate Japanese to English dataset. For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. We create a function, ```preprocess.py``` to extract the first 2 million sentence-pairs, and allocate 99.9% of them for training (and 0.1% for dev). Pre-training on a dataset that is different from the JESC should in theory allow our Transformer model to generalize better and faster, and setting the parameter ```num_trials``` to 1 prevents the Pretrained Transformer from being overly fixated on the Pretraining dataset. Apart from the use of the Pretrained Transformer, the hyperparameters for TransformerA and TransformerB are largely similar.
 
 #### Hyperparameters for Pretrained Transformer
 1. batch_size: 16
@@ -78,6 +78,38 @@ In our second model, we pre-train our Transformer on a separate Japanese to Engl
 
 --------------------------------------------------------------------------------------------------------------------------------
 
+#### Transformer C(omplex)
+In our last model, we pre-train our Transformer on a separate Japanese to English dataset, similar to TransformerA. While the hyperparameters between TransformerA and TransformerC are largely similar, they differ in the following ways: 
+
+a. TransformerC uses a [RoPE](https://arxiv.org/abs/2104.09864) instead of Absolute Positional Embeddings 
+b. TransformerC uses a [SwiGLU](https://arxiv.org/pdf/1710.05941v1) activation function for the Feedforward Neural Network instead of the Vanilla ReLU.
+c. TransformerC uses [RMSNorm](https://arxiv.org/abs/1910.07467) instead of the normal [LayerNorm](https://arxiv.org/abs/1607.06450).
+
+#### Hyperparameters for Pretrained Transformer
+1. batch_size: 16
+2. word_embeddings: 512
+3. dim_feedforward: 2048
+4. nhead: 6
+5. num_encoder_layer: 6
+6. num_decoder_layer: 6
+7. dropout_rate: 0.1
+8. learning_rate: 3e-4
+9. num_trials: 1
+
+#### Hyperparameters for the Transformer Model A(dvanced)
+1. batch_size: 32
+2. word_embeddings: 512
+3. dim_feedforward: 2048
+4. nhead: 6
+5. num_encoder_layer: 6
+6. num_decoder_layer: 6
+7. dropout_rate: 0.1
+8. learning_rate: 3e-4
+9. num_trials: 5
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
 ### How To
 
 #### Bidirectional LSTM and Transformer B(asic)  
@@ -97,7 +129,7 @@ Decodes the test input into test output and evaluates the goodness of fit of our
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-#### Bidirectional LSTM and Transformer A(dvanced)
+#### Transformer A(dvanced) and Transformer C(omplex)
 
 For pre-training, we will use data from [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/), the largest publicly available English-Japanese parallel corpus created by NTT. The specific version we are using is V2.0, which contains 10.0 million sentence pairs. We have created a function, called ```preprocess.py``` that processes and creates 2 different datasets for each language (training and dev).
 1. ```python preprocess.py```
