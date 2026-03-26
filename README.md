@@ -81,9 +81,13 @@ In our third model, we pre-train our Transformer on a separate Japanese to Engli
 #### Transformer C(omplex)
 In our last model, we pre-train our Transformer on a separate Japanese to English dataset, similar to TransformerA. While the hyperparameters between TransformerA and TransformerC are largely similar, they differ in the following ways: 
 
+
 a. TransformerC uses a [RoPE](https://arxiv.org/abs/2104.09864) instead of Absolute Positional Embeddings 
+
 b. TransformerC uses a [SwiGLU](https://arxiv.org/pdf/1710.05941v1) activation function for the Feedforward Neural Network instead of the Vanilla ReLU.
+
 c. TransformerC uses [RMSNorm](https://arxiv.org/abs/1910.07467) instead of the normal [LayerNorm](https://arxiv.org/abs/1607.06450).
+
 
 #### Hyperparameters for Pretrained Transformer
 1. batch_size: 16
