@@ -9,7 +9,7 @@ For the Japanese-to-English model, our data comes from the [Japanese-English Sub
 For pre-training, we are using data from the [JParaCrawl](https://www.kecl.ntt.co.jp/icl/lirg/jparacrawl/) dataset, the largest publicly available English-Japanese parallel corpus created by NTT.
 
 #### Tokenization
-For tokenization, I opted for [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
+For tokenization, I opted for the unigram tokenizer from [SentencePiece from Google](https://github.com/google/sentencepiece) (similar to Assignment 3) which treats each sentence as a sequence of Unicode characters; there is no language-dependent logic. 
 This is applied across both the Japanese and English corpus to tokenize the sentences into tokens (via words).
 
 ### Model (Updated 26 Mar 2026)
@@ -100,7 +100,7 @@ c. TransformerC uses [RMSNorm](https://arxiv.org/abs/1910.07467) instead of the 
 8. learning_rate: 3e-4
 9. num_trials: 1
 
-#### Hyperparameters for the Transformer Model A(dvanced)
+#### Hyperparameters for the Transformer Model C(omplex)
 1. batch_size: 32
 2. word_embeddings: 512
 3. dim_feedforward: 2048
@@ -127,7 +127,7 @@ This trains the models (in [nmt_model.py]), using the parameters e.g. embedding 
 
 2. ```sh run.sh train```
 
-Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
+Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEURT.
 
 3. ```sh run.sh test```
 
@@ -149,7 +149,7 @@ This trains the models (in [nmt_model.py]), using the parameters e.g. embedding 
 
 4. ```sh run.sh train```
 
-Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
+Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEURT.
 
 6. ```sh run.sh test```
 
@@ -159,4 +159,4 @@ Decodes the test input into test output and evaluates the goodness of fit of our
 Using our Bidirectional LSTM, we obtained a BLEURT of 0.414 on the holdout dataset. Our Transformer B(asic) achieved a BLEURT of 0.477. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.480.
 
 ### Conclusion
-In the case of our simple example, we observe that Transformers do much better than Bidirectional LSTMs with Attention, with both Transformer models achieving an improvement of > 15%. However, pretraining doesn't seem to improve the BLEURT score much, since it only leads to an improvement of 0.6%.    
+In the case of our simple example, we observe that Transformers do much better than Bidirectional LSTMs with Attention, with both Transformer models achieving an improvement of > 15%. However, pretraining doesn't seem to improve the BLEURT score much, since it only leads to an improvement of 0.6%. [Insert Section on TransformerC]
