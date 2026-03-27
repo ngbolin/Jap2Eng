@@ -127,9 +127,13 @@ This trains the models (in [nmt_model.py]), using the parameters e.g. embedding 
 
 2. ```sh run.sh train```
 
-Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEURT.
+Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
 
 3. ```sh run.sh test```
+
+Evaluates the test outputs against the actual output using BLEURT
+
+4. ```python bleurt_eval.py   --output-file outputs/test_outputs.txt   --test-file ../data/jpn-eng/JESC/test.en  --checkpoint ../BLEURT/BLEURT-20   --result-file outputs/results.txt```
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -149,9 +153,13 @@ This trains the models (in [nmt_model.py]), using the parameters e.g. embedding 
 
 4. ```sh run.sh train```
 
-Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEURT.
+Decodes the test input into test output and evaluates the goodness of fit of our test outputs with the actual output using BLEU.
 
-6. ```sh run.sh test```
+5. ```sh run.sh test```
+
+Evaluates the test outputs against the actual output using BLEURT
+
+6. ```python bleurt_eval.py   --output-file outputs/test_outputs.txt   --test-file ../data/jpn-eng/JESC/test.en  --checkpoint ../BLEURT/BLEURT-20   --result-file outputs/results.txt```
 
 --------------------------------------------------------------------------------------------------------------------------------
 
