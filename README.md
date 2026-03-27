@@ -164,7 +164,7 @@ Evaluates the test outputs against the actual output using BLEURT
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Results
-Using our Bidirectional LSTM, we obtained a BLEURT of 0.414 on the holdout dataset. Our Transformer B(asic) achieved a BLEURT of 0.477. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.480. Finally, our Transformer C(omplex) achieved a BLEURT of 0.4915.
+Using our Bidirectional LSTM, we obtained a BLEURT of 0.414 on the holdout dataset. Our Transformer B(asic) achieved a BLEURT of 0.477. On the other hand, our Transformer A(dvanced) achieved a BLEURT of 0.480. Finally, our Transformer C(omplex) achieved a BLEURT of 0.492.
 
 ### Conclusion
 In the case of our simple example, we observe that Transformers do much better than Bidirectional LSTMs with Attention, with both Transformer models achieving an improvement of > 15%. However, pretraining doesn't seem to improve the BLEURT score much, since it only leads to an improvement of 0.6%. With further optimization including the use of RoPE, SwiGLU and RMSNorm, this resulted in a further improvement of 2.4%.
